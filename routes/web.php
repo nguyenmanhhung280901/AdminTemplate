@@ -18,12 +18,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', AdminController:: class, 'index');
+//Route::get('/index', AdminController:: class, 'index');
+//
+//Route::get('/form', AdminController:: class, 'form');
+//Route::get('/calendar', AdminController:: class, 'calendar');
+//Route::get('/list', AdminController:: class, 'list');
+//Route::get('/ui-elements-modals', AdminController:: class, 'uiElementsModals');
 
-Route::get('/advanced', AdminController:: class, 'form');
-Route::get('/basic', AdminController:: class, 'calendar');
-Route::get('/codeEditor', AdminController:: class, 'list');
-Route::get('/validation', AdminController:: class, 'uiElementsModals');
+Route::get('/index', function () {
+    return view('admin.index');
+});
+
+Route::get('/form', function () {
+    return view('admin.form');
+});
+
+Route::get('/', function () {
+    return view('admin.list');
+});
+
+Route::get('/', function () {
+    return view('admin.ui-elements-modals');
+});
+
+Route::get('/', function () {
+    return view('admin.calendar');
+});
 
 
 
