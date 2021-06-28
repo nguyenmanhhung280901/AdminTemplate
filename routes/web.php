@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user/register', [UserController::class, 'register']);
+Route::get('/index', AdminController:: class, 'index');
+
+Route::get('/advanced', AdminController:: class, 'form');
+Route::get('/basic', AdminController:: class, 'calendar');
+Route::get('/codeEditor', AdminController:: class, 'list');
+Route::get('/validation', AdminController:: class, 'uiElementsModals');
+
+
 
 
 
